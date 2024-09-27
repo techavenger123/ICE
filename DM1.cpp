@@ -4,7 +4,7 @@ using namespace std;
 
 vector<int> dm(vector<int>& modulatedSignal, int st) {
     vector<int> demodulated;
-    int pre = 0;  
+    int pre = 0; 
 
     for (int i = 0; i < modulatedSignal.size(); i++) {
         if (modulatedSignal[i] == 1) {
