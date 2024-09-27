@@ -19,7 +19,7 @@ vector<int> dm(vector<int>& modulatedSignal, int st) {
 }
 
 int main() {
-    vector<int> modulatedSignal = {0, 1, 1, 1, 1, 1, 0, 0, 0};  
+    vector<int> modulatedSignal = {0, 1, 1, 0, 0, 1, 1, 1, 0};  
     int st = 1;  
 
     
