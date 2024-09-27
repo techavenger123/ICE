@@ -2,34 +2,33 @@
 #include <vector>
 using namespace std;
 
-// Function for Delta Demodulation
-vector<int> deltaDemodulation(vector<int>& modulatedSignal, int stepSize) {
+vector<int> dm(vector<int>& modulatedSignal, int st) {
     vector<int> demodulated;
-    int previousValue = 0;  // Start with an initial value (can be set to 0)
+    int pre = 0;  
 
     for (int i = 0; i < modulatedSignal.size(); i++) {
         if (modulatedSignal[i] == 1) {
-            previousValue += stepSize;  // Move up by step size
+            pre += st;  
         } else {
-            previousValue -= stepSize;  // Move down by step size
+            pre -= st;  
         }
-        demodulated.push_back(previousValue);
+        demodulated.push_back(pre);
     }
 
     return demodulated;
 }
 
 int main() {
-    vector<int> modulatedSignal = {0, 1, 1, 1, 1, 1, 0, 0, 0};  // Example modulated signal
-    int stepSize = 1;  // Define the step size for the demodulation
+    vector<int> modulatedSignal = {0, 1, 1, 1, 1, 1, 0, 0, 0};  
+    int st = 1;  
 
-    // Perform Delta Demodulation
-    vector<int> demodulatedSignal = deltaDemodulation(modulatedSignal, stepSize);
+    
+    vector<int> demodusignal = dm(modulatedSignal, st);
 
-    // Output the demodulated signal
+    
     cout << "Demodulated signal: ";
-    for (int i = 0; i < demodulatedSignal.size(); i++) {
-        cout << demodulatedSignal[i] << " ";
+    for (int i = 0; i < demodusignal.size(); i++) {
+        cout << demodusignal[i] << " ";
     }
     cout << endl;
 
