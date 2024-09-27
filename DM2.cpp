@@ -20,7 +20,7 @@ vector<int> deltaModulation(vector<int>& signal, int stepSize) {
 }
 
 int main() {
-    vector<int> signal = {0, 1, 3, 6, 8, 10, 7, 4, 1};
+    vector<int> signal = {1,2,3,4,-10,-20,-30,-50,10};
     int stepSize = 1;
 
 
