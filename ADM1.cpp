@@ -25,7 +25,7 @@ vector<int> ADM(vector<int>& dt, int initial, int factor) {
 }
 
 int main() {
-    vector<int> dt = {0, 1, 4, 8, 12, 18, 15, 10, 5};
+    vector<int> dt = {1,2,3,4,-10,-20,-30,-50,10};
     int initial = 1;
     int factor = 1;
     vector<int> dm = ADM(dt, initial, factor);
