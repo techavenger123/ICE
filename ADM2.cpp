@@ -2,36 +2,36 @@
 #include <vector>
 using namespace std;
 
-vector<int> adaptiveDeltaDemodulation(vector<int>& modulatedSignal, int initialStepSize, int stepAdjustmentFactor) {
+vector<int> ADM(vector<int>& ms, int initial, int factor) {
     vector<int> demodulated;
-    int previousValue = 0;
-    int stepSize = initialStepSize;
+    int pre = 0;
+    int st = initial;
 
-    for (int i = 0; i < modulatedSignal.size(); i++) {
-        if (modulatedSignal[i] == 1) {
-            previousValue += stepSize;
+    for (int i = 0; i < ms.size(); i++) {
+        if (ms[i] == 1) {
+            pre += st;
         } else {
-            previousValue -= stepSize;
+            pre -= st;
         }
-        demodulated.push_back(previousValue);
-        stepSize += stepAdjustmentFactor;
+        demodulated.push_back(pre);
+        st += factor;
 
 
-        if (i > 0 && modulatedSignal[i] != modulatedSignal[i-1]) {
-            stepSize = max(initialStepSize, stepSize - stepAdjustmentFactor);
+        if (i > 0 && ms[i] != ms[i-1]) {
+            st = max(initial, st - factor);
         }
     }
 
     return demodulated;
 }
 int main() {
-    vector<int> modulatedSignal = {0, 1, 1, 1, 1, 1, 0, 0, 0};
-    int initialStepSize = 1;
-    int stepAdjustmentFactor = 1;
-    vector<int> demodulatedSignal = adaptiveDeltaDemodulation(modulatedSignal, initialStepSize, stepAdjustmentFactor);
+    vector<int> ms = {0, 1, 1, 1, 1, 1, 0, 0, 0};
+    int initial = 1;
+    int factor = 1;
+    vector<int> dems = ADM(ms, initial, factor);
     cout << "Adaptive Demodulated signal: ";
-    for (int i = 0; i < demodulatedSignal.size(); i++) {
-        cout << demodulatedSignal[i] << " ";
+    for (int i = 0; i < dems.size(); i++) {
+        cout << dems[i] << " ";
     }
     cout << endl;
 
