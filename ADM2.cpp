@@ -25,7 +25,7 @@ vector<int> ADM(vector<int>& ms, int initial, int factor) {
     return demodulated;
 }
 int main() {
-    vector<int> ms = {0, 1, 1, 1, 1, 1, 0, 0, 0};
+    vector<int> ms = {0, 1, 1, 0, 0, 1, 1, 1, 0};
     int initial = 1;
     int factor = 1;
     vector<int> dems = ADM(ms, initial, factor);
