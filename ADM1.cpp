@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-vector<int> adaptiveDeltaModulation(vector<int>& dt, int initial, int factor) {
+vector<int> ADM(vector<int>& dt, int initial, int factor) {
     vector<int> modulated;
     int pre = 0;
     int st = initial;
@@ -28,7 +28,7 @@ int main() {
     vector<int> dt = {0, 1, 4, 8, 12, 18, 15, 10, 5};
     int initial = 1;
     int factor = 1;
-    vector<int> dm = adaptiveDeltaModulation(dt, initial, factor);
+    vector<int> dm = ADM(dt, initial, factor);
     cout << "Adaptive Modulated dt: ";
     for (int i = 0; i < dm.size(); i++) {
         cout << dm[i] << " ";
